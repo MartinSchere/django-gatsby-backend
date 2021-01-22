@@ -6,10 +6,10 @@ jobs:
       - image: cimg/python:3.8.5
       - image: circleci/postgres:13.1
         environment:
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
-          POSTGRES_USER: postgres 
-          POSTGRES_PASSWORD: postgres 
-          POSTGRES_DB: django-gatsby 
+          - DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+          - POSTGRES_USER: postgres 
+          - POSTGRES_PASSWORD: postgres 
+          - POSTGRES_DB: django-gatsby 
     steps:
       - checkout
       - restore_cache:
