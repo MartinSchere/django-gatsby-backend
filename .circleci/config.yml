@@ -8,10 +8,10 @@ jobs:
           DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
 
       - image: circleci/postgres:13.1
-      environment:
-        POSTGRES_USER: root 
-        POSTGRES_PASSWORD: postgres 
-        POSTGRES_DB: circle_test 
+        environment:
+          POSTGRES_USER: root 
+          POSTGRES_PASSWORD: postgres 
+          POSTGRES_DB: circle_test 
     steps:
       - checkout
       - restore_cache:
