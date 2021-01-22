@@ -4,12 +4,13 @@ jobs:
   tests:
     docker:
       - image: cimg/python:3.8.5
+      environment:
+        - DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
       - image: circleci/postgres:13.1
-        environment:
-          - DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
-          - POSTGRES_USER: postgres 
-          - POSTGRES_PASSWORD: postgres 
-          - POSTGRES_DB: django-gatsby 
+      environment:
+        - POSTGRES_USER: postgres 
+        - POSTGRES_PASSWORD: postgres 
+        - POSTGRES_DB: django-gatsby 
     steps:
       - checkout
       - restore_cache:
